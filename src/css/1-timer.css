@@ -34,17 +34,34 @@ button{
         font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.04em;
-        color: #989898;
-        border-radius: 8px;
-            padding: 8px 16px;
-            width: 75px;
-            height: 40px;
-            background: #cfcfcf;
+    border-radius: 8px;
+        padding: 8px 16px;
+        width: 75px;
+        height: 40px;
             border: none;
             display: flex;
+            background: #4e75ff;
+            font-family: "Montserrat", sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 1.5;
+                letter-spacing: 0.04em;
+                color: #fff;
       
 }
 
+button:hover{border-radius: 8px;
+    padding: 8px 16px;
+    width: 75px;
+    height: 40px;
+background: #6c8cff;}
+button:disabled{
+    border-radius: 8px;
+        padding: 8px 16px;
+        width: 75px;
+        height: 40px;
+        background: #cfcfcf;
+}
 .btn-input{
    display: flex;
    gap:8px

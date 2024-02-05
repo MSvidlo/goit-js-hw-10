@@ -11,7 +11,7 @@ import "flatpickr/dist/flatpickr.min.css";
 import iziToast from "izitoast";
 // Додатковий імпорт стилів
 import "izitoast/dist/css/iziToast.min.css";
-
+let countdownInterval;
 const input = document.querySelector("input#datetime-picker")
 
 const options = flatpickr("#datetime-picker", {
@@ -21,6 +21,7 @@ const options = flatpickr("#datetime-picker", {
     onClose: function (selectedDates) {
         const selectedDate = selectedDates[0];
         const today = new Date();
+      
         if (selectedDate <= today) {
             document.querySelector('button[data-start]').disabled = true;
             iziToast.error({
@@ -31,11 +32,13 @@ const options = flatpickr("#datetime-picker", {
         } else {
             document.querySelector('button[data-start]').disabled = false;
         }
-    }
+    },
+   
 });
 
 
 const startBtn = document.querySelector('button[data-start]');
+startBtn.disabled = true;
 startBtn.addEventListener('click', function () {
     const selectedDate = new Date(options.selectedDates[0]);
     const countdownElement = document.querySelector('.timer');
@@ -46,17 +49,17 @@ startBtn.addEventListener('click', function () {
 
             if (timeDiff <= 0) {
                 clearInterval(countdownInterval);
-                document.getElementById('days').textContent = "00";
-                document.getElementById('hours').textContent = "00";
-                document.getElementById('minutes').textContent = "00";
-                document.getElementById('seconds').textContent = "00";
+                document.querySelector('[data-days]').textContent = "00";
+                document.querySelector('[data-hours]').textContent = "00";
+                document.querySelector('[data-minutes]').textContent = "00";
+                document.querySelector('[data-seconds]').textContent = "00";
                 return;
             }
  const timeRemaining = convertMs(timeDiff);
-            document.getElementById('days').textContent = addLeadingZero(timeRemaining.days);
-            document.getElementById('hours').textContent = addLeadingZero(timeRemaining.hours);
-            document.getElementById('minutes').textContent = addLeadingZero(timeRemaining.minutes);
-            document.getElementById('seconds').textContent = addLeadingZero(timeRemaining.seconds);
+            document.querySelector('[data-days]').textContent = addLeadingZero(timeRemaining.days);
+            document.querySelector('[data-hours]').textContent = addLeadingZero(timeRemaining.hours);
+            document.querySelector('[data-minutes]').textContent = addLeadingZero(timeRemaining.minutes);
+            document.querySelector('[data-seconds]').textContent = addLeadingZero(timeRemaining.seconds);
         }, 1000);
 
         this.disabled = true;
