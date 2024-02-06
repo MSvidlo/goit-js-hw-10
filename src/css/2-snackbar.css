@@ -1,0 +1,83 @@
+.form{
+    width: 360px;
+    height: 230px;
+
+}
+fieldset{max-width: 360px;
+    max-height: 78px;
+    display: flex;
+    border-radius: 4px;
+        stroke-width: 1px;
+        stroke: #808080;
+        margin-bottom: 24px;
+
+        font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.04em;
+            color: #2e2f42;
+
+}
+.indelay{
+    max-width: 360px;
+    height: 40px;
+
+font-family: "Montserrat", sans-serif;
+font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+color: #2e2f42;}
+.delay{
+    max-width: 360px;
+   max-height: 72px;
+              display: flex;
+        flex-direction: column;
+        font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.04em;
+            color: #2e2f42;     
+            gap:8px;
+}
+
+delay{
+
+}
+
+button{
+    border-radius: 8px;
+        padding: 8px 16px;
+        width: 360px;
+        height: 40px;
+        background: #4e75ff;
+        font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.04em;
+            color: #fff;
+            border: none;
+}
+.radbtn{
+    width: 264px;
+        height: 32px;
+        display: flex;
+        align-items: stretch;
+        justify-content:center;
+        font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #2e2f42;
+            gap:48px;
+            border-radius: 4px;
+             
+                stroke: #808080;
+}
+
+input{ border-radius: 4px;
+    stroke-width: 1px;
+    stroke: #808080}

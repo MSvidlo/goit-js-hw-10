@@ -13,7 +13,7 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 let countdownInterval;
 const input = document.querySelector("input#datetime-picker")
-
+// використання бібліотеки flatpicker
 const options = flatpickr("#datetime-picker", {
     enableTime: true,
     time_24hr: true,
@@ -21,9 +21,10 @@ const options = flatpickr("#datetime-picker", {
     onClose: function (selectedDates) {
         const selectedDate = selectedDates[0];
         const today = new Date();
-      
+// перевірка валдності дати  
         if (selectedDate <= today) {
             document.querySelector('button[data-start]').disabled = true;
+// бібліотека iziToast для відображення повідомлення 
             iziToast.error({
                 title: 'Error',
                 message: 'Please choose a date in the future',
@@ -39,6 +40,7 @@ const options = flatpickr("#datetime-picker", {
 
 const startBtn = document.querySelector('button[data-start]');
 startBtn.disabled = true;
+
 startBtn.addEventListener('click', function () {
     const selectedDate = new Date(options.selectedDates[0]);
     const countdownElement = document.querySelector('.timer');
