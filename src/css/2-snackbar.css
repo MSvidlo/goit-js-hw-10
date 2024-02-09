@@ -61,6 +61,12 @@ button{
             color: #fff;
             border: none;
 }
+
+button:hover{border-radius: 8px;
+    padding: 8px 16px;
+    width: 360px;
+    height: 40px;
+background-color: #6c8cff;}
 .radbtn{
     width: 264px;
         height: 32px;
@@ -80,4 +86,5 @@ button{
 
 input{ border-radius: 4px;
     stroke-width: 1px;
-    stroke: #808080}
+    stroke: #808080};
+   
