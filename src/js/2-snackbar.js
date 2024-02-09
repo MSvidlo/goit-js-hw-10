@@ -26,7 +26,7 @@ myForm.addEventListener('submit', function (e) {
     });
 
 
-
+    // Обробляємо результати промісу
           promise.then((delay) => {
         iziToast.success({
             message: `✅ Fulfilled promise in ${delay}ms`,

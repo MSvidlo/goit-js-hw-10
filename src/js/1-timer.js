@@ -21,7 +21,7 @@ const options = flatpickr("#datetime-picker", {
     onClose: function (selectedDates) {
         const selectedDate = selectedDates[0];
         const today = new Date();
-// перевірка валдності дати  
+// перевірка валідності дати  
         if (selectedDate <= today) {
             document.querySelector('button[data-start]').disabled = true;
 // бібліотека iziToast для відображення повідомлення 
