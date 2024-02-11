@@ -6,12 +6,13 @@ import flatpickr from "flatpickr";
 
 // Додатковий імпорт стилів
 import "flatpickr/dist/flatpickr.min.css";
-
+    
 // Описаний у документації
-import iziToast from "izitoast";
+import iziToast from "izitoast";     
 // Додатковий імпорт стилів
 import "izitoast/dist/css/iziToast.min.css";
 let countdownInterval;
+let isTimerStarted = false;
 const input = document.querySelector("input#datetime-picker")
 // використання бібліотеки flatpicker
 const options = flatpickr("#datetime-picker", {
@@ -21,7 +22,7 @@ const options = flatpickr("#datetime-picker", {
     onClose: function (selectedDates) {
         const selectedDate = selectedDates[0];
         const today = new Date();
-// перевірка валідності дати  
+// перевірка валдності дати  
         if (selectedDate <= today) {
             document.querySelector('button[data-start]').disabled = true;
 // бібліотека iziToast для відображення повідомлення 
@@ -42,6 +43,13 @@ const startBtn = document.querySelector('button[data-start]');
 startBtn.disabled = true;
 
 startBtn.addEventListener('click', function () {
+// валідація щоб запобігти користувачу від вибору нової дати після старту зворотного відліку
+    if (isTimerStarted) {
+       return;
+    }
+
+isTimerStarted = true;
+
     const selectedDate = new Date(options.selectedDates[0]);
     const countdownElement = document.querySelector('.timer');
 
