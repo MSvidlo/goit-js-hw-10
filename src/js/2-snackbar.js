@@ -7,12 +7,8 @@ const myForm = document.querySelector('.form');
 myForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const selectedOption= document.querySelector('input[name="state"]:checked').value
-    const delay = document.querySelector('.indelay').value;
+    const delay = document.querySelector('input[name="delay"]').value;
 
-
-     const inputElement = document.querySelector('input[type="radio"]');
-    
-    
     // Створюємо проміс
     const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
